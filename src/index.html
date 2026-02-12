@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buku hutang noank</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-gray-100 min-h-screen pb-10">
+
+    <div class="bg-blue-700 text-white p-6 rounded-b-3xl shadow-lg mb-6">
+        <h1 class="text-2xl font-bold italic tracking-wider">BUKU HUTANG DIGITAL TOKO NOANK</h1>
+        <p class="text-sm opacity-80">Makle tak pah maloppah reng se aotang</p>
+    </div>
+
+    <div class="container mx-auto px-4">
+        <div class="bg-white p-5 rounded-2xl shadow-sm mb-8">
+            <h2 class="font-bold mb-4 text-gray-700 font-sans">Tambah Pelanggan Baru</h2>
+            <input type="text" id="nama" placeholder="Nama Pelanggan" class="w-full mb-2 p-3 border rounded-lg focus:outline-blue-500">
+            <input type="text" id="alamat" placeholder="Alamat (Contoh: Desa A, Kel B)" class="w-full mb-4 p-3 border rounded-lg focus:outline-blue-500">
+            <button onclick="tambahPelanggan()" class="w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700 transition">
+                Simpan Pelanggan
+            </button>
+        </div>
+
+        <div class="flex justify-between items-center mb-4 px-1">
+            <h2 class="font-bold text-gray-700">Daftar Hutang</h2>
+        </div>
+
+        <div id="listData">
+            <p class="text-center text-gray-400 mt-10 text-sm italic font-sans">Memuat data...</p>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
