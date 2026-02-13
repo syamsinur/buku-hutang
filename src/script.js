@@ -218,10 +218,7 @@ onSnapshot(q, (snapshot) => {
 
 // Register Service Worker untuk PWA
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    // Pakai ../sw.js karena posisi app.js ada di dalam folder src
-    navigator.serviceWorker.register('../sw.js')
-      .then(reg => console.log('PWA Aktif!'))
-      .catch(err => console.log('PWA Gagal:', err));
-  });
+  navigator.serviceWorker.register('../sw.js') // Titik dua berarti keluar folder src
+    .then(() => console.log("PWA Ready!"))
+    .catch((err) => console.log("PWA Failed", err));
 }
