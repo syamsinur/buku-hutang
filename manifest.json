@@ -1,17 +1,27 @@
 {
   "short_name": "BukuHutang",
-  "name": "Buku Hutang Toko Kita",
+  "name": "Buku Hutang Digital Toko Noank",
   "description": "Aplikasi pencatatan hutang pelanggan toko",
   "icons": [
     {
       "src": "https://cdn-icons-png.flaticon.com/512/1611/1611154.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/GoogleChrome/samples/gh-pages/pwa-install-prompt/screenshot-mobile.png",
+      "sizes": "320x640",
+      "type": "image/png",
+      "form_factor": "narrow"
     },
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/1611/1611154.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "https://raw.githubusercontent.com/GoogleChrome/samples/gh-pages/pwa-install-prompt/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ],
   "start_url": "./index.html",
