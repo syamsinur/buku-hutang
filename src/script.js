@@ -136,6 +136,24 @@ window.kirimWA = (nama, total) => {
   window.open(url, "_blank");
 };
 
+// --- FUNGSI PENCARIAN (FILTER) ---
+window.filterPelanggan = () => {
+    const input = document.getElementById('cariNama').value.toLowerCase();
+    const listData = document.getElementById('listData');
+    const kartu = listData.getElementsByClassName('kartu-pelanggan');
+
+    for (let i = 0; i < kartu.length; i++) {
+        // Ambil teks nama dari h3 di dalam kartu
+        const nama = kartu[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+        
+        if (nama.indexOf(input) > -1) {
+            kartu[i].style.display = ""; // Tampilkan jika cocok
+        } else {
+            kartu[i].style.display = "none"; // Sembunyikan jika tidak cocok
+        }
+    }
+};
+
 // --- TAMPILKAN DATA SECARA REAL-TIME ---
 const q = query(colRef, orderBy("createdAt", "desc"));
 onSnapshot(q, (snapshot) => {
@@ -157,7 +175,7 @@ onSnapshot(q, (snapshot) => {
       data.total_hutang > 0 ? "border-red-500" : "border-green-500";
 
     listData.innerHTML += `
-            <div class="bg-white p-4 rounded-xl shadow-sm mb-3 border-l-4 ${borderHutang}">
+            <div class="kartu-pelanggan bg-white p-4 rounded-xl shadow-sm mb-3 border-l-4 ${borderHutang}">
                 <div class="flex justify-between items-start">
                     <div class="flex-1">
                         <h3 class="font-bold text-gray-800 uppercase text-sm">${data.nama}</h3>
