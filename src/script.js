@@ -219,6 +219,9 @@ onSnapshot(q, (snapshot) => {
 // Register Service Worker untuk PWA
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW error:', err));
+    // Pakai ../sw.js karena posisi app.js ada di dalam folder src
+    navigator.serviceWorker.register('../sw.js')
+      .then(reg => console.log('PWA Aktif!'))
+      .catch(err => console.log('PWA Gagal:', err));
   });
 }
