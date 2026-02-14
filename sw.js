@@ -5,7 +5,6 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Handler ini wajib ada agar syarat PWA terpenuhi
   event.respondWith(
     fetch(event.request).catch(() => caches.match(event.request))
   );
